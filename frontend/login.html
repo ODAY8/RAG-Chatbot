@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In — DocAI</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+
+<div class="login-page">
+
+  <!-- ── Left: Hero ── -->
+  <div class="login-hero">
+    <div class="hero-graphic">
+      <div class="orbit orbit-1">
+        <div class="orbit-dot" style="top:-5px;left:50%;transform:translateX(-50%)"></div>
+      </div>
+      <div class="orbit orbit-2">
+        <div class="orbit-dot" style="bottom:-5px;left:50%;transform:translateX(-50%)"></div>
+      </div>
+      <div class="orbit orbit-3">
+        <div class="orbit-dot" style="top:50%;right:-5px;transform:translateY(-50%)"></div>
+      </div>
+      <div class="center-icon">🤖</div>
+    </div>
+
+    <div class="hero-tagline">
+      <h2>AI Document Assistant</h2>
+      <p>Upload your documents and have intelligent conversations powered by Groq &amp; LangChain.</p>
+    </div>
+
+    <div class="hero-features">
+      <div class="hero-feature"><div class="check">✓</div> Upload PDF, DOCX, TXT &amp; Markdown</div>
+      <div class="hero-feature"><div class="check">✓</div> Powered by Groq llama-3.3-70b</div>
+      <div class="hero-feature"><div class="check">✓</div> RAG pipeline with ChromaDB</div>
+      <div class="hero-feature"><div class="check">✓</div> Source citations on every answer</div>
+    </div>
+  </div>
+
+  <!-- ── Right: Form ── -->
+  <div class="login-form-panel">
+    <div class="login-card">
+
+      <div class="brand">
+        <div class="brand-icon">🤖</div>
+        <div class="brand-name">Doc<span>AI</span></div>
+      </div>
+
+      <h1>Welcome back</h1>
+      <p class="subtitle">Sign in to your account to continue</p>
+
+      <form id="login-form" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="email">Email address</label>
+          <div class="input-wrap">
+            <span class="input-icon">✉</span>
+            <input type="email" id="email" placeholder="you@example.com" autocomplete="email" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Password</label>
+          <div class="input-wrap">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="password" placeholder="••••••••" autocomplete="current-password" required />
+            <button type="button" id="toggle-pw" class="toggle-pw">👁</button>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="checkbox-label">
+            <input type="checkbox" /> Remember me
+          </label>
+          <a href="#" class="forgot-link">Forgot password?</a>
+        </div>
+
+        <button type="submit" id="submit-btn" class="btn btn-primary btn-login">Sign In</button>
+      </form>
+
+      <p class="register-link">
+        Don't have an account? <a href="/register.html">Create one</a>
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<div id="toast-container"></div>
+<script src="js/api.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

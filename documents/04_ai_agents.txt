@@ -1,0 +1,37 @@
+AI Agents
+
+Chatbot vs Agent
+A traditional chatbot can only answer questions and imitate human-like
+conversation. Its flow is simple: User asks a question, the LLM responds.
+An AI agent goes further: it can perform tasks based on a query by calling
+tools. Its flow is: User asks a question, the LLM reasons, the agent calls
+one or more tools, and then a response is produced using the tool results.
+
+Components of an AI Agent
+An agent is generally made of four parts:
+- LLM (the brain that reasons about what to do)
+- Tools (actions the agent can take, such as web search, database queries,
+  or API calls)
+- Memory (context from the current session and past sessions)
+- Knowledge (a knowledge base the agent can retrieve information from,
+  often powered by RAG)
+
+The ReAct Loop (Reasoning + Acting)
+ReAct is a foundational design pattern in agentic AI that combines
+step-by-step thinking with execution. It works as a loop:
+1. Thought: the LLM reasons about the user's objective, what it knows,
+   and what it still needs.
+2. Action: based on that thought, the agent selects a tool and calls it
+   with the right parameters.
+3. Observation: the result of the tool call is passed back into the LLM's
+   context, and the LLM uses it to decide the next Thought.
+
+Short-Term vs Long-Term Memory
+Short-term memory is the agent's working memory or scratchpad. It keeps
+track of the current conversation but is limited by the model's context
+window; as tasks grow large, older information must be dropped or
+summarized. Long-term memory stores user preferences, historical
+interactions, and learned facts across sessions, usually backed by a
+vector database, SQL database, or knowledge graph, transforming the agent
+from a stateless chatbot into a personalized, continuously adapting
+assistant.

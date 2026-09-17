@@ -1,0 +1,31 @@
+Embeddings and Vector Databases
+
+Why Traditional Search Fails
+Imagine a document contains the sentence "My dog loves playing in the park."
+A user searches "Tell me about puppies." A keyword search will probably not
+find this document, because it does not contain the word "puppies" at all.
+Humans intuitively know that "dog" and "puppy" are related concepts, but
+computers only see the literal words unless we give them a way to represent
+meaning.
+
+What Are Embeddings
+An embedding is a list of numbers that represents the meaning of a piece of
+text. For example, the sentence "I love dogs" might be converted into a vector
+like [0.12, -0.45, 0.91, ...]. These numbers capture semantic meaning, so texts
+with similar meanings end up near each other in vector space. Words like "dog",
+"puppy", and "pet" cluster closely together, while unrelated concepts like
+"car" and "airplane" end up farther away.
+
+Similarity Search
+The retrieval process works like this: a user query is converted into an
+embedding, that embedding is compared against stored embeddings using a
+similarity metric, and the most similar chunks of text are returned as the
+most relevant results. This is often called "searching by meaning, not
+keywords."
+
+Why Not Traditional Databases
+Traditional relational databases are excellent for IDs, numbers, and exact
+matches, but semantic similarity is very difficult to express with SQL
+queries. Vector databases (such as ChromaDB) are purpose-built for storing
+embeddings and performing fast, scalable similarity search. This enables
+semantic matching that traditional databases cannot easily achieve.

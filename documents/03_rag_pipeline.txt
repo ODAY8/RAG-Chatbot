@@ -1,0 +1,33 @@
+Retrieval-Augmented Generation (RAG)
+
+What Is RAG
+RAG combines external knowledge with LLM reasoning. The goal is to ground the
+model's responses in real documents rather than relying purely on what the
+model memorized during training. This directly addresses hallucination, which
+happens when an LLM generates incorrect or fabricated information due to
+missing knowledge, ambiguous prompts, or outdated training data.
+
+Chunking
+Before documents can be stored in a vector database, they must be broken into
+smaller, manageable segments called chunks. Common chunking strategies include:
+- Fixed-size chunking: splits text into equal-sized segments by character or
+  token count. Simple and fast, but risks cutting sentences mid-thought.
+- Fixed-size chunking with overlap: adds a percentage overlap (commonly
+  10-20 percent) between consecutive chunks to preserve context continuity.
+- Recursive character text splitting: breaks text using a hierarchy of
+  separators (paragraphs, then sentences, then spaces) to keep related
+  content together.
+- Semantic chunking: groups sentences based on the similarity of their
+  embeddings, splitting only where there is a real shift in topic.
+- Structure-aware chunking: respects the native layout of a document (headers,
+  tables, code blocks) so that unrelated sections are not merged together.
+
+The Three Phases of a RAG Pipeline
+1. Indexing phase: Documents are chunked, converted into embeddings, and
+   stored in a vector database. This creates the knowledge base.
+2. Retrieval phase: A user's question is embedded, compared against the
+   vector database using similarity search, and the top-K most relevant
+   chunks are retrieved.
+3. Generation phase: The retrieved context is passed into the LLM along
+   with the original question, and the LLM produces a grounded response
+   based on that retrieved information rather than guessing from memory.

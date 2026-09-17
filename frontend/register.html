@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account — DocAI</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/register.css" />
+</head>
+<body>
+
+<div class="login-page">
+
+  <!-- ── Left: Hero ── -->
+  <div class="login-hero">
+    <div class="hero-graphic">
+      <div class="orbit orbit-1">
+        <div class="orbit-dot" style="top:-5px;left:50%;transform:translateX(-50%)"></div>
+      </div>
+      <div class="orbit orbit-2">
+        <div class="orbit-dot" style="bottom:-5px;left:50%;transform:translateX(-50%)"></div>
+      </div>
+      <div class="orbit orbit-3">
+        <div class="orbit-dot" style="top:50%;right:-5px;transform:translateY(-50%)"></div>
+      </div>
+      <div class="center-icon">✨</div>
+    </div>
+
+    <div class="hero-tagline">
+      <h2>Join DocAI Today</h2>
+      <p>Create your free account and start chatting with your documents in seconds.</p>
+    </div>
+
+    <div class="hero-features">
+      <div class="hero-feature"><div class="check">✓</div> Free to get started</div>
+      <div class="hero-feature"><div class="check">✓</div> Upload unlimited documents</div>
+      <div class="hero-feature"><div class="check">✓</div> Powered by Groq llama-3.3-70b</div>
+      <div class="hero-feature"><div class="check">✓</div> Your data stays on your machine</div>
+    </div>
+  </div>
+
+  <!-- ── Right: Form ── -->
+  <div class="login-form-panel">
+    <div class="login-card">
+
+      <div class="brand">
+        <div class="brand-icon">✨</div>
+        <div class="brand-name">Doc<span>AI</span></div>
+      </div>
+
+      <h1>Create your account</h1>
+      <p class="subtitle">Fill in the details below to get started</p>
+
+      <form id="register-form" novalidate>
+
+        <!-- Name -->
+        <div class="form-group">
+          <label class="form-label" for="reg-name">Full name</label>
+          <div class="input-wrap">
+            <span class="input-icon">👤</span>
+            <input
+              type="text"
+              id="reg-name"
+              placeholder="Jane Smith"
+              autocomplete="name"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label class="form-label" for="reg-email">Email address</label>
+          <div class="input-wrap">
+            <span class="input-icon">✉</span>
+            <input
+              type="email"
+              id="reg-email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label class="form-label" for="reg-password">Password</label>
+          <div class="input-wrap">
+            <span class="input-icon">🔒</span>
+            <input
+              type="password"
+              id="reg-password"
+              placeholder="Min. 6 characters"
+              autocomplete="new-password"
+              required
+            />
+            <button type="button" id="toggle-pw" class="toggle-pw">👁</button>
+          </div>
+          <!-- Strength indicator -->
+          <div class="strength-wrap">
+            <div class="strength-track">
+              <div class="strength-bar" id="strength-bar"></div>
+            </div>
+            <span class="strength-label" id="strength-label"></span>
+          </div>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-group">
+          <label class="form-label" for="reg-confirm">Confirm password</label>
+          <div class="input-wrap">
+            <span class="input-icon">🔒</span>
+            <input
+              type="password"
+              id="reg-confirm"
+              placeholder="Repeat your password"
+              autocomplete="new-password"
+              required
+            />
+          </div>
+        </div>
+
+        <button type="submit" id="submit-btn" class="btn btn-register">
+          Create Account
+        </button>
+
+      </form>
+
+      <p class="register-link">
+        Already have an account? <a href="/login.html">Sign in</a>
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<div id="toast-container"></div>
+<script src="js/api.js"></script>
+<script src="js/register.js"></script>
+</body>
+</html>

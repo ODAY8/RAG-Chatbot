@@ -1,0 +1,104 @@
+/* ============================================================
+   documents.css
+   ============================================================ */
+
+.docs-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.search-wrap .search-icon {
+  position: absolute;
+  left: 12px; top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-3);
+  pointer-events: none;
+}
+
+.search-wrap input {
+  width: 100%;
+  padding: 9px 12px 9px 38px;
+}
+
+/* ── Documents Table ─────────────────────────────────────── */
+.docs-table-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.docs-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.docs-table th {
+  background: var(--surface-2);
+  padding: 12px 16px;
+  text-align: left;
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--text-2);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.docs-table td {
+  padding: 14px 16px;
+  font-size: .875rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.docs-table tr:last-child td { border-bottom: none; }
+
+.docs-table tbody tr {
+  transition: background var(--transition);
+}
+.docs-table tbody tr:hover { background: var(--surface-2); }
+
+.doc-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.doc-file-icon {
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.doc-name { font-weight: 500; }
+.doc-ext  { font-size: .75rem; color: var(--text-3); margin-top: 1px; }
+
+.doc-actions { display: flex; gap: 6px; }
+
+/* ── File type colors ────────────────────────────────────── */
+.ft-pdf  { background: rgba(239,68,68,.15);  color: #EF4444; }
+.ft-txt  { background: rgba(59,130,246,.15); color: var(--primary); }
+.ft-docx { background: rgba(16,185,129,.15); color: var(--success); }
+.ft-md   { background: rgba(139,92,246,.15); color: #8B5CF6; }
+.ft-default { background: var(--surface-2); color: var(--text-2); }
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .docs-table th:nth-child(3),
+  .docs-table td:nth-child(3),
+  .docs-table th:nth-child(4),
+  .docs-table td:nth-child(4) { display: none; }
+}

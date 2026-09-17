@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.env
+
+# Runtime data (vector store, user accounts, uploaded files)
+chroma_db/
+documents/*.pdf
+documents_meta.json
+users.json

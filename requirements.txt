@@ -1,0 +1,22 @@
+# Core RAG
+langchain
+langchain-community
+langchain-chroma
+langchain-text-splitters
+langchain-groq
+langchain-huggingface
+chromadb
+sentence-transformers
+
+# Document loaders
+pypdf
+docx2txt
+unstructured
+
+# Flask API
+flask
+flask-cors
+
+# Utilities
+python-dotenv
+tiktoken
